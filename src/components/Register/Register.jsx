@@ -58,7 +58,7 @@ const Register = () => {
             })
     }
     return (
-        <div className="mt-3">
+        <div className="mt-3 p-5">
 
 
             <div className="container mx-auto  w-full max-w-md p-8 space-y-3 rounded-xl bg-slate-200 ">
@@ -113,7 +113,7 @@ const Register = () => {
                         </svg>
                     </button>
 
-                    
+
                 </div>
                 <p className="text-xs text-center sm:px-6 dark:text-gray-600">Already have an account? <br />
                     <Link to='/login'><button className="btn mt-2">Log In</button></Link>

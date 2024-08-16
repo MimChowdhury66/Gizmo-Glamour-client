@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Link, NavLink } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip'
 
 const Nav = () => {
+    const { logout, user } = useContext(AuthContext);
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -23,15 +27,29 @@ const Nav = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            <li><NavLink to="/">Home</NavLink></li>
+                            <li><NavLink to="/about">About Us</NavLink></li>
+                            <Tooltip id="my-tooltip" />
+                            {
+                                user ? <div data-tooltip-id="my-tooltip" data-tooltip-place="right" data-tooltip-content={user?.displayName || 'name not found'} className="dropdown dropdown-end  z-[4]" >
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                        <div className="w-10 rounded-full "  >
+                                            <img src={user?.photoURL || 'https://avatars.githubusercontent.com/u/86664820?v=4'} alt="" />
+
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="dropdown-content z-[4] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li><button onClick={logout} className="btn btn-sm btn-ghost">Logout</button></li>
+                                    </ul>
+                                </div> :
+
+
+                                    <div className="flex gap-2 ">
+                                        <Link to='/login'><button className="btn lg:text-xl text-white  bg-blue-400 ">Log In</button></Link>
+                                        <Link to='/register'><button className="btn lg:text-xl text-white bg-blue-400">Register</button></Link>
+                                    </div>
+
+                            }
                         </ul>
                     </div>
                     <img className='w-[90px] lg:w-[150px]' src="/public/Gizmo_Glamour.png" alt="" />
@@ -43,17 +61,29 @@ const Nav = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/about">About Us</NavLink></li>
+                        <Tooltip id="my-tooltip" />
+                        {
+                            user ? <div data-tooltip-id="my-tooltip" data-tooltip-place="top" data-tooltip-content={user?.displayName || 'name not found'} className="dropdown dropdown-end  z-[4]" >
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                    <div className="w-10 rounded-full "  >
+                                        <img src={user?.photoURL || 'https://avatars.githubusercontent.com/u/86664820?v=4'} alt="" />
+
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="dropdown-content z-[4] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><button onClick={logout} className="btn btn-sm btn-ghost">Logout</button></li>
                                 </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                            </div> :
+
+
+                                <div className="flex gap-2 ">
+                                    <Link to='/login'><button className="btn lg:text-xl text-white  bg-blue-400 ">Log In</button></Link>
+                                    <Link to='/register'><button className="btn lg:text-xl text-white bg-blue-400">Register</button></Link>
+                                </div>
+
+                        }
                     </ul>
                 </div>
             </div>
