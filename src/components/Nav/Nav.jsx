@@ -52,7 +52,7 @@ const Nav = () => {
                             }
                         </ul>
                     </div>
-                    <img className='w-[90px] lg:w-[150px]' src="/public/Gizmo_Glamour.png" alt="" />
+                    <img className='w-[90px] lg:w-[150px]' src="/Gizmo_Glamour.png" alt="" />
                     <br />
                     <h2 className=''><span className='font-bold'>Gizmo</span> Glamour</h2>
                 </div>
