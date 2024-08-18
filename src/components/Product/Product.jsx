@@ -20,7 +20,7 @@ const Product = () => {
         const getData = async () => {
             try {
                 const { data } = await axios(
-                    'http://localhost:5000/products'
+                    'https://final-task-server-two.vercel.app/products'
                 );
                 // Extract unique categories
                 const uniqueCategories = [...new Set(data.map(product => product.category))];
@@ -39,7 +39,7 @@ const Product = () => {
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios(
-                `http://localhost:5000/all-products?page=${currentPage}&size=${itemsPerPage}&filter=${filter}&sort=${sort}&search=${search}&brand=${brand}&price=${price}&sort_newest=${sort_newest}`
+                `https://final-task-server-two.vercel.app/all-products?page=${currentPage}&size=${itemsPerPage}&filter=${filter}&sort=${sort}&search=${search}&brand=${brand}&price=${price}&sort_newest=${sort_newest}`
             )
             setProducts(data)
         }
@@ -50,7 +50,7 @@ const Product = () => {
     useEffect(() => {
         const getCount = async () => {
             const { data } = await axios(
-                `http://localhost:5000/products-count?filter=${filter}&search=${search}&brand=${brand}&price=${price}`
+                `https://final-task-server-two.vercel.app/products-count?filter=${filter}&search=${search}&brand=${brand}&price=${price}`
             )
 
             setCount(data.count)
@@ -87,7 +87,7 @@ const Product = () => {
     }
     console.log(searchText, search)
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allProducts')
+    //     fetch('https://final-task-server-two.vercel.app/allProducts')
     //         .then(res => res.json())
     //         .then(data => {
     //             setProducts(data)
