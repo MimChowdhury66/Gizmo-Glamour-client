@@ -100,7 +100,7 @@ const Product = () => {
                 to guide you along the way.</p>
 
 
-            <div className='flex overflow-x-auto gap-4 mt-5'>
+            <div className='flex overflow-x-auto  gap-4 mt-5'>
                 {/* Search */}
                 <form onSubmit={handleSearch}>
                     <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
@@ -114,7 +114,7 @@ const Product = () => {
                             aria-label='Find Your Product'
                         />
 
-                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-pink-400 rounded-md hover:bg-[#4eaa15] focus:bg-gray-600 focus:outline-none'>
+                        <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-pink-400 rounded-md hover:bg-blue-500 focus:bg-gray-600 focus:outline-none'>
                             Search
                         </button>
                     </div>
@@ -216,7 +216,7 @@ const Product = () => {
                 </div>
 
                 <button onClick={handleReset} className='btn'>
-                    Reset
+                    Reset All
                 </button>
             </div>
 
@@ -253,7 +253,7 @@ const Product = () => {
                 <button
                     disabled={currentPage === 1}
                     onClick={() => handlePaginationButton(currentPage - 1)}
-                    className='px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-[#51AA1B]  hover:text-white'
+                    className='px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-pink-400  hover:text-white'
                 >
                     <div className='flex items-center -mx-1'>
                         <svg
@@ -279,8 +279,8 @@ const Product = () => {
                     <button
                         onClick={() => handlePaginationButton(btnNum)}
                         key={btnNum}
-                        className={`hidden ${currentPage === btnNum ? 'bg-[#51AA1B] text-white' : ''
-                            } px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-[#51AA1B]  hover:text-white`}
+                        className={`hidden ${currentPage === btnNum ? 'bg-blue-400 text-white' : ''
+                            } px-4 py-2 mx-1 transition-colors duration-300 transform  rounded-md sm:inline hover:bg-pink-400  hover:text-white`}
                     >
                         {btnNum}
                     </button>
@@ -289,7 +289,7 @@ const Product = () => {
                 <button
                     disabled={currentPage === numberOfPages}
                     onClick={() => handlePaginationButton(currentPage + 1)}
-                    className='px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-[#51AA1B] disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500'
+                    className='px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-pink-400 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500'
                 >
                     <div className='flex items-center -mx-1'>
                         <span className='mx-1'>Next</span>
